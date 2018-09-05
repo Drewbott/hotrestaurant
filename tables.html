@@ -22,8 +22,8 @@
       <h1><i class="fab fa-free-code-camp" style='font-size: 36px'></i>Hot Restaurant</h1>
       <h3>Book the hottest seat at the hottest restaurant</h3>
       <hr>
-      <a href="/make"><button class="btn btn-danger btn-lg"><i class="fas fa-plus"></i>Reserve a Table</button></a>
-      <a href="/"><button class="btn btn-danger btn-lg"><i class="fas fa-home"></i>Home</button></a>
+      <a href="/make"><button class="btn btn-danger btn-lg"><i class="fas fa-plus"></i> Reserve a Table</button></a>
+      <a href="/"><button class="btn btn-danger btn-lg"><i class="fas fa-home"></i> Home</button></a>
     </div>
     
     <div class="row">
@@ -46,8 +46,8 @@
   </div>
 
   <script type="text/javascript">
-    var data = [{name: 'David', phone: '911', email: 50, id: 12}]
-    for (var i = 0; i < data.length; i++) {
+    $.get("/api/characters", function(data) {
+      for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
         var listGroupItem = $("<li class='list-group-item'>");
 
@@ -58,6 +58,7 @@
 
         $("#character-section").append(listGroupItem);
       }
+    });
     // $.get("/api/characters", function(data) {
     //   for (var i = 0; i < data.length; i++) {
     //     console.log(data[i]);

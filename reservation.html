@@ -17,7 +17,7 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1> <i class="fab fa-free-code-camp" style='font-size: 36px'></i>Hot Restaurant</h1>
+      <h1> <i class="fab fa-free-code-camp" style='font-size: 36px'></i> Hot Restaurant</h1>
       <h3>Book the hottest seat at the hottest restaurant</h3>
       <hr>
       <a href="/reservation"><button class="btn btn-danger btn-lg"><i class="fas fa-table"></i> View Tables</button></a>
@@ -40,18 +40,18 @@
                 </div>
     
                 <div class="form-group">
-                  <label for="role">Phone Number</label>
-                  <input type="text" class="form-control" id="role">
+                  <label for="phone">Phone Number</label>
+                  <input type="text" class="form-control" id="phone">
                 </div>
     
                 <div class="form-group">
-                  <label for="age">Email</label>
-                  <input type="text" class="form-control" id="age">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email">
                 </div>
     
                 <div class="form-group">
-                  <label for="force-points">ID</label>
-                  <input type="text" class="form-control" id="force-points">
+                  <label for="ID">ID</label>
+                  <input type="text" class="form-control" id="ID">
                 </div>
     
               </form>
@@ -68,7 +68,27 @@
       <a href="/api/reservations">API Table Link</a> | <a href='/api/waitlist'>API Wait List</a>
  
     </div>
-
+    <script type="text/javascript">
+      // Question: What does this code do?
+      $("#add-btn").on("click", function(event) {
+        event.preventDefault();
+  
+        var newCharacter = {
+          name: $("#name").val().trim(),
+          phone: $("#phone").val().trim(),
+          email: $("#email").val().trim(),
+          id: $("#ID").val().trim()
+        };
+  
+        // Question: What does this code do??
+        $.post("/api/reservations", newCharacter)
+          .then(function(data) {
+            console.log(data);
+          });
+  
+      });
+  
+    </script>
 </body>
 
 </html>
