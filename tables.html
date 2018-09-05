@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Restaurant</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+            
+
+      <h1><i class="fab fa-free-code-camp" style='font-size: 36px'></i>Hot Restaurant</h1>
+      <h3>Book the hottest seat at the hottest restaurant</h3>
+      <hr>
+      <a href="/make"><button class="btn btn-danger btn-lg"><i class="fas fa-plus"></i>Reserve a Table</button></a>
+      <a href="/"><button class="btn btn-danger btn-lg"><i class="fas fa-home"></i>Home</button></a>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-12">
+    
+          <div class="card">
+            <div class="card-header">
+              <h3><strong>Tables</strong></h3>
+            </div>
+            <div class="card-body">
+              <ul id="character-section" class="list-group">
+    
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/api/reservations">API Table Link</a> | <a href='/api/waitlist'>API Wait List</a>
+  </div>
+
+  <script type="text/javascript">
+    var data = [{name: 'David', phone: '911', email: 50, id: 12}]
+    for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        var listGroupItem = $("<li class='list-group-item'>");
+
+        listGroupItem.append($("<h2>").text("Name: " + data[i].name));
+        listGroupItem.append($("<h3>").text("Phone Number: " + data[i].phone));
+        listGroupItem.append($("<h3>").text("Email: " + data[i].email));
+        listGroupItem.append($("<h3>").text("ID: " + data[i].id));
+
+        $("#character-section").append(listGroupItem);
+      }
+    // $.get("/api/characters", function(data) {
+    //   for (var i = 0; i < data.length; i++) {
+    //     console.log(data[i]);
+    //     var listGroupItem = $("<li class='list-group-item'>");
+
+    //     listGroupItem.append($("<h2>").text("Name: " + data[i].name));
+    //     listGroupItem.append($("<h3>").text("Role: " + data[i].role));
+    //     listGroupItem.append($("<h3>").text("Age: " + data[i].age));
+    //     listGroupItem.append($("<h3>").text("Force Points: " + data[i].forcePoints));
+
+    //     $("#character-section").append(listGroupItem);
+    //   }
+    // });
+    
+  </script>
+
+</body>
+
+</html>

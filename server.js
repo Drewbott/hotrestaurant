@@ -44,11 +44,11 @@ app.get("/", function(req, res) {
   });
   
   app.get("/make", function(req, res) {
-    res.sendFile(path.join(__dirname, "make.html"));
+    res.sendFile(path.join(__dirname, "reservation.html"));
   });
   
   app.get("/view", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "tables.html"));
   });
 
   // Displays all characters
