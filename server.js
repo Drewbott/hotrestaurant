@@ -71,7 +71,7 @@ app.get("/api/waitlist", function(req, res) {
     // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
   
     // console.log(newcharacter);
-  if (reservations.length > 5){
+  if (reservations.length < 5){
     reservations.push(newReservation);
     res.json(newReservation);
   }
