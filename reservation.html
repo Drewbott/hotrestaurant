@@ -82,8 +82,13 @@
   
         // Question: What does this code do??
         $.post("/api/reservations", newCharacter)
-          .then(function(data,res) {
-            console.log(data);
+          .then(function(data) {
+            if(data){
+              alert('Congratulations, you have a table reserved.')
+            }
+            else{
+              alert('Great, you\'re on the waitlist')
+            }
           });
   
       });
