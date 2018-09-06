@@ -74,11 +74,14 @@ app.get("/api/waitlist", function(req, res) {
   if (reservations.length < 5){
     reservations.push(newReservation);
     res.json(newReservation);
+    return res.json(true)
   }
   else {
       waitList.push(newReservation);
       res.json(newReservation)
+      return res.json(false)
   }
+  
     
   });
 
